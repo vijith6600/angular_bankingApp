@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
  //not to return back to home
- if(!localStorage.getItem('cacno')){
+ if(!localStorage.getItem('currentAcno')){
   alert('please login')
   this.router.navigateByUrl('')
 }

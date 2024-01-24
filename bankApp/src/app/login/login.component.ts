@@ -54,8 +54,12 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid){
       this.db.login(acno, pass)
         .subscribe((result: any) => {
+          localStorage.setItem("currentUname",JSON.stringify(result.cusername))
+          localStorage.setItem("currentAcno",JSON.stringify(result.cusername))
+          localStorage.setItem("token",JSON.stringify(result.token))
+
           alert(result.message)
-          this.router.navigateByUrl("dashboard")
+          this.router.navigateByUrl("home")
         },
           result => {
             alert(result.error.message)

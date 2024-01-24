@@ -95,7 +95,7 @@ const Jwtmiddleware = (req, res, nex) => {
 // register api
 app.post('/register', (req, res) => {
     console.log(req.body);
-    dataservice.register(req.body.acno, req.body.password, req.body.userName)
+    dataservice.register(req.body.acno, req.body.pass, req.body.uname)
         .then(result => {
             res.status(result.statusCode).json(result)
         })
@@ -103,9 +103,9 @@ app.post('/register', (req, res) => {
 })
 
 // Login api api
-app.get('/login', (req, res) => {
+app.post('/login', (req, res) => {
     console.log(req.body);
-    dataservice.login(req.body.acno, req.body.pswd)
+    dataservice.login(req.body.acno, req.body.pass)
         //    console.log(result)
 
         .then(result => {

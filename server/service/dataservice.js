@@ -61,7 +61,7 @@ const login = (acno, pass) => {
 
                 //Token generation using jwt
                 const token = jwt.sign({
-                    currentacno: acno
+                    cacno: acno
                 }, "key321")
 
 
