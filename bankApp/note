@@ -1,0 +1,104 @@
+
+
+
+
+
+
+
+                angular - front end technology
+
+
+1. To create a project - ng new projectName / ng new projectName --rowting
+
+2. To run angular project - ng serve / ng servr --open
+
+3. To generate component - ng g c componentName
+
+4. To generate service - ng g s serviceName
+
+
+
+                Building blocks of angular
+
+1. Module - To import libraries (root module - App module)
+
+2. Component  - To create view (Html,css,ts,specification) - (root component -App component)
+
+3. share data inside a comonent like ts to html
+                1. one way binding - data shareing in only one direction
+                2. component to view (ts file to html)
+                        => string interpolaton - {{expression}}
+                        => property binding - [attribute name]="property name
+                
+                3. view to component (html to ts)
+                        => event binding - (event-name)="function()"
+                        =>event binding using $event - (event-name)="function($event)"
+
+                        => Using Template referencing variable - #variable-name
+
+                4. Two way binding - data sharing in both direction at the same time
+
+                        => ngmodel - import FormsModule in AppModule -[(ngModel)]="Variable-name"
+
+                5. Angular Routing - used to set the path for Component in appRowtingModule
+
+                        => use router-outlet selector in root component
+
+                6. Dependency Injection [imp]
+
+                7.angular service to database to acess in diffrent code
+
+                8.(ngSubmit)=function() call
+
+                9. Angular Diractive - To manipulate DOM stractive
+
+                        => Component Directive
+                        => Structural Directive - prefixed by *
+                                
+                                => *ngFor
+                                => *ngIf
+
+                        => Attribute Directive ngClass
+                                
+                
+                10, Angular Form
+
+                        => Template Driven Form ()
+                        => Model Driven Form  - Design model in Ts file
+                               
+                                > Reactive Forms - FORM group , Array, Control
+                                        >import REactiveFormsModule
+
+
+                11, local storage
+
+                        =>setItem
+                        =>getItem
+                        =>removeItem
+
+                12, Parent - child Cmmunication
+
+                        =>parent to child - Input
+                        =>Child to parent - Output
+
+                13, Angular pipe
+
+                14, Front end server side integration 
+
+
+                       => import HttpClient module
+                       => Inject HttpClient
+                       => Call api using HttpClient
+
+                15, Asynchronous Call - RxJS
+
+                        => Observable
+
+                                => resolved - sunscribe()
+                                => reject - catch()
+
+
+                        
+                                
+
+            to clone a Git hub link - git clone (http://githuburl)

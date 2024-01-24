@@ -1,0 +1,83 @@
+<nav class="navbar navbar-light bg-dark">
+  <a class="navbar-brand" href="#" style="color: rgb(85, 98, 237)"
+    ><b>&#169; HAFC Bank Pvt.Ltd </b></a
+  >
+  <span class="quote text-light">Giving you freedom...</span>
+  <h4 style="color: white">{{ aim }}</h4>
+  <!-- string interpolation using doubble {{value}} -->
+</nav>
+
+<div class="container col-md-12 mt-0">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="text-center">Sign In</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="loginForm">
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input
+              name="acno"
+              formControlName="acno"
+              type="text"
+              class="form-control"
+              [placeholder]="account"
+              id="login_accno"
+              required
+            />
+          </div>
+          <div
+            *ngIf="
+              this.loginForm.get('acno')?.touched &&
+              this.loginForm.get('acno')?.errors
+            "
+            style="color: red"
+          >
+            invalid Acno
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input
+              name="acno"
+              formControlName="pass"
+              type="password"
+              class="form-control"
+              placeholder="password"
+              id="login_password"
+              required
+            />
+          </div>
+
+          <div
+            *ngIf="
+              this.loginForm.get('pass')?.touched &&
+              this.loginForm.get('pass')?.errors
+            "
+            style="color: red"
+          >
+            invalid password
+          </div>
+
+          <div class="form-group">
+            <input
+              (click)="login()"
+              type="submit"
+              value="Login"
+              class="btn float-right login_btn"
+              style="width: 50%"
+            />
+          </div>
+        </form>
+      </div>
+      <!-- router Link is used imsted of href="" -->
+      <p style="color: white; align-items: baseline">
+        Not a user? <a routerLink="register">Register</a>
+      </p>
+    </div>
+  </div>
+</div>

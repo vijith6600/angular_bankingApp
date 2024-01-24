@@ -1,0 +1,118 @@
+<h1 class="mt-5 ml-5" style="color:white;">welcome {{user}}
+    
+    <a href="javascript: void(0);" (click)="logout()"><i class="bi bi-house-door float-right mr-5"></i></a>
+    <h5 class=" float-right mr-4 mt-3">{{date | date : 'short'}} </h5> 
+</h1>
+<a routerLink="/trans" class="ml-5" style="color: white;">Transaction History</a>
+<button type="button" (click)="deletebtn()" class="btn btn-outline-danger float-right mr-5 "><i
+        class="bi bi-trash"></i>delete</button>
+
+<!-- delete confirm child selector -->
+<app-deletealert (nobutton)="cancel()" [item]="acno"></app-deletealert>
+
+<div [ngClass]="acno? 'style1': '' " class="row">
+    <div class="container col-md-6 mt-5">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Deposit</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="deppositForm">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input name="acno" formControlName="acno" type="text" class="form-control"
+                                placeholder="account number" id="uname1" required>
+                        </div>
+                        <div *ngIf="this.deppositForm.get('acno')?.touched&&this.deppositForm.get('acno')?.errors"
+                            style="color:red;">invalid acno</div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input name="amound" formControlName="amound" type="text" class="form-control"
+                                placeholder="amound" id="amound" required>
+                        </div>
+
+                        <div *ngIf="this.deppositForm.get('amound')?.touched&&this.deppositForm.get('amound')?.errors"
+                            style="color:red;">invalid amound</div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input name="pass" formControlName="pass" type="text" class="form-control"
+                                placeholder="password" id="pass" required>
+                        </div>
+
+                        <div *ngIf="this.deppositForm.get('pass')?.touched&&this.deppositForm.get('pass')?.errors"
+                            style="color:red;">invalid pass</div>
+
+                        <div class="form-group">
+                            <input (click)="deposit()" type="submit" value="Deposit" class="btn float-right login_btn "
+                                style="width:50%">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container col-md-6 mt-5">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Withdrow</h3>
+
+                </div>
+
+                <div class="card-body">
+                    <form [formGroup]="withdrowForm">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input name="acno2" formControlName="acno" type="text" class="form-control"
+                                placeholder="account number" id="acno2" required>
+                        </div>
+                        <div *ngIf="this.withdrowForm.get('acno')?.touched&&this.withdrowForm.get('acno')?.errors"
+                            style="color:red;">invalid acno</div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input name="amound2" formControlName="amound" type="text" class="form-control"
+                                placeholder="amound" id="amound2" required>
+                        </div>
+
+                        <div *ngIf="this.withdrowForm.get('amound')?.touched&&this.withdrowForm.get('amound')?.errors"
+                            style="color:red;">invalid amound</div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input name="pass2" formControlName="pass" type="text" class="form-control"
+                                placeholder="password" id="pass2" required>
+                        </div>
+
+                        <div *ngIf="this.withdrowForm.get('pass')?.touched&&this.withdrowForm.get('pass')?.errors"
+                            style="color:red;">invalid Username</div>
+
+                        <div class="form-group">
+                            <input (click)="withdrow()" type="submit" value="Withdrow"
+                                class="btn float-right login_btn " style="width:50%">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

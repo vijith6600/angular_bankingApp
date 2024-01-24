@@ -1,0 +1,70 @@
+
+            <!-- Server Creation - Node Js & Express -->
+
+
+            <!-- Basic Commands -->
+            
+
+        1. Create package.jason -npm init
+
+        2. Install Express - npm i Express
+
+        3. SErver run - nodemon index.js
+
+        4. Inatall JWT Token - npm i jsonwebtoken
+
+        5. Install mongoose - npm i mongoose
+
+        6. Install CORS - npm i cors
+
+
+            <!-- Basic step -->
+
+
+        1. Create a Folder for Server
+        2. Create package.jason
+        3. Install Express
+        4. Create Index.Js
+        5. Import Express
+        6. Create Server app Using Express
+        7. Set up port number for Server
+        8. HTTP Request resolving
+        9. Run server
+        10. Responce code
+
+            1** - Information
+            2** - Sucess
+            3** - Redirection
+            4** - Client error
+            5** - Server error
+
+
+        11. JWT Token - Json Wen Token
+
+            => Token Generation  -  sign()
+             => Token Validation  - verify() 
+
+
+        12. Middleware
+
+            => Application specific Middleware
+
+            => Router specific Middleware
+
+
+
+        13. Data base Integration - mongose
+
+                => import mongoose
+                => Connect the db using mangoose
+                =>Create the model using mongoose
+
+        
+        14. resolve asynchronus - promise
+
+                => resolve state - then()
+                => reject state  - catch()
+
+        15. CORS orgin resorce sharing
+
+            
